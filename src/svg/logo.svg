@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="250px" height="31px" viewBox="0 0 170 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logo</title>
+    <g id="wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="PlayfairDisplay-ExtraBold, Playfair Display" font-size="23" font-weight="600" letter-spacing="1.02222222">
+        <g id="top-navigation-bar" transform="translate(-90.000000, 1.000000)">
+            <g id="logo" transform="translate(90.000000, -1.000000)">
+                <g id="top-navigation-bar" fill="#6BE0CB">
+                    <text id="seashell">
+                        <tspan x="0" y="25">seashell</tspan>
+                    </text>
+                </g>
+                <g id="top-navigation-bar-copy" transform="translate(100.000000, 0.000000)" fill="#2BCAAD">
+                    <text id="player">
+                        <tspan x="0" y="25">player</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
