@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
+import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 import heartoutlineicon from '../svg/heartoutlineicon.svg';
@@ -100,11 +100,7 @@ export class Player extends React.Component {
                                     play: <img src={playbutton} alt="play button"/>,
                                     pause: <img src={pausebutton} alt="pause button"/>
                                 }}
-                                customProgressBarSection={
-                                    [ 
-                                        RHAP_UI.CURRENT_TIME, RHAP_UI.PROGRESS_BAR, RHAP_UI.DURATION
-                                    ]
-                                }
+                                customAdditionalControls={[]}
                             />
                         </div>
                     </div>
@@ -117,7 +113,7 @@ export class Player extends React.Component {
                                     <p dangerouslySetInnerHTML={{ __html: episode.description.substring(0,75)}}></p>
                                 </div>
                                 <div className="nextEpisode-list-item-right">
-                                    <button id="play-2" onClick={(event)=>this.playNextEpisode(event,{...episode})}>
+                                    <button id="play" onClick={(event)=>this.playNextEpisode(event,{...episode})}>
                                         <img src={playbutton} alt="play button"/>
                                     </button>
                                 </div>

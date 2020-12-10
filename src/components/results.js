@@ -77,7 +77,6 @@ export class Results extends React.Component {
                 <div className="podcast-results">
                 {this.state.podcasts.map((podcast,index) => 
                   <div key={index} className="podcast-list"> 
-                  {/* <Link to="/podcast"> */}
                     {podcast.results.map((result,index) =>
                         <div className="podcast" key={index} 
                             onClick={(event)=>this.handlePodcast(event,result.podcast.id)}>
@@ -85,7 +84,7 @@ export class Results extends React.Component {
                             <img src={result.podcast.image} className="podcast-img" alt="podcast"/>
                           </div>
                           <div className="podcast-right">
-                            <h5 className="podcast-header">{result.title_original}</h5>
+                            <h5 className="podcast-header">{result.title_original.substring(0,25)}...</h5>
                             <p className="podcast-desc">{result.description_original.substring(0,50)}...</p>
                             <p className="podcast-minutes">
                                 {typeof result.audio_length_sec === 'number' ? 
@@ -94,7 +93,6 @@ export class Results extends React.Component {
                           </div>
                         </div>
                     )}
-                    {/* </Link> */}
                   </div>
                 )}
             </div>

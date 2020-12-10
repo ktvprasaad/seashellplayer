@@ -116,21 +116,6 @@ input:focus {
   right: .7em;
 }
 
-/* .searchButton {
-  position: absolute;
-  padding: 1px;
-  background: none;
-  right: 3em;
-  top: 14.7em;
-  border: none;
-  height: 9px;
-  width: 14px;
-}
-
-.searchButton:focus {
-  outline: none;
-} */
-
 /* For results.js component's styling */
 .loadingShell {
   display: grid;
@@ -168,6 +153,10 @@ input:focus {
   margin-bottom: 15px;
 }
 
+.podcast:hover {
+  cursor: pointer;
+}
+
 .podcast-left img {
   width: 75px;
   margin-right: 10px;
@@ -188,7 +177,9 @@ p {
 }
 
 p.podcast-desc {
-  height: 3em;
+  margin-top: .1em;
+  height: 2.5em;
+  overflow: hidden;
 }
 
 .nopodcast {
@@ -257,6 +248,7 @@ span {
   grid-area: 1/1/2/4;
   margin: 0px;
 }
+
 #rhap_current-time {
   grid-area: 2/1/2/2;
   font-size: 14px;
@@ -294,7 +286,13 @@ span {
   flex: 0;
 }
 
-.rhap_controls-section .rhap_main-controls {
+.i-player .rhap_controls-section .rhap_main-controls {
+  flex: 3;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.audio-player .rhap_controls-section .rhap_main-controls {
   flex: 3;
   flex-direction: row;
   justify-content: center;
@@ -337,13 +335,6 @@ span {
   background: #4045F5;
 }
 
-#play-1, #play-2 {
-  background-color: #6BE0CB;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-}
-
 .episode-playing {
   background-color: #6BE0CB;
   display: flex;
@@ -380,12 +371,19 @@ span {
   place-content: center;
 } 
 
-button#play-2 {
+button#play {
   padding: auto 0px;
 }
 
-#play-2 {
+#play {
   background-color: #CDF4ED;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+}
+
+#play:hover {
+ cursor: pointer;
 }
 
 

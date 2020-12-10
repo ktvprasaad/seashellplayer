@@ -41,13 +41,11 @@ export class Search extends React.Component {
                 <div className="search-keyword">
                     <form className="search-keyword-form" onSubmit={(event)=>this.handleSubmit(event,searchKeyword)}>
                         <input type="text" required
-                        value={searchKeyword}
-                        onChange={(event) => this.setState({searchKeyword: event.target.value})}
+                          value={searchKeyword}
+                          onChange={(event) => this.setState({searchKeyword: event.target.value})}
                         />
-                        {/* <span className="searchButton" type="button" onClick={(event)=>this.handleSubmit(event,searchKeyword)}> */}
-                            <img className="search-keyword-form forwardarrow" src={forwardarrow} alt="forward-arrow logo"
-                            onClick={(event)=>this.handleSubmit(event,searchKeyword)}/>
-                        {/* </span> */}
+                        <img className="search-keyword-form forwardarrow" src={forwardarrow} alt="forward-arrow logo"
+                          onClick={(event)=>this.handleSubmit(event,searchKeyword)}/>
                     </form>
                 </div>
             </div>
