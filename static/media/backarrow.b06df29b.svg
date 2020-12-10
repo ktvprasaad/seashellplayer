@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="14px" viewBox="0 0 9 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>back arrow</title>
+    <g id="wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="back-arrow" transform="translate(1.000000, 1.000000)" stroke="#404040" stroke-width="2">
+            <polyline points="7 7.61890551e-14 8.84015083e-14 6 7 12"></polyline>
+        </g>
+    </g>
+</svg>

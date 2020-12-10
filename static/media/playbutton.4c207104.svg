@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="43px" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>play button</title>
+    <defs>
+        <circle id="path-1" cx="17.5" cy="17.5" r="17.5"></circle>
+        <filter x="-20.0%" y="-14.3%" width="140.0%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.228802448 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="play-button" transform="translate(4.000000, 2.000000)">
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#4045F5" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <polygon id="Triangle" fill="#F5F5F5" transform="translate(19.237340, 17.831379) rotate(90.000000) translate(-19.237340, -17.831379) " points="19.2373402 11.8313787 26.7373402 23.8313787 11.7373402 23.8313787"></polygon>
+        </g>
+    </g>
+</svg>
