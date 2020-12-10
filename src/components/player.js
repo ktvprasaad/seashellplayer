@@ -18,6 +18,7 @@ export class Player extends React.Component {
             playing: null,
             currentIndex: 0,
             len: -1,
+            iphone: (/iphone|ipod/i.test(navigator.userAgent.toLowerCase())) ? true : false,
         };
     }
 
@@ -67,7 +68,7 @@ export class Player extends React.Component {
     }
 
     render() {
-        const { podcast, playing } = this.state;
+        const { podcast, playing, iphone } = this.state;
 
         if (!podcast) { return null }
 
@@ -84,33 +85,49 @@ export class Player extends React.Component {
                                 <img src={playing.image} alt="episode"/>
                             </div>
                             <div className="episode-desc">
-                                <h4>{playing.title.substring(0,50)}</h4>
-                                <p dangerouslySetInnerHTML={{ __html: playing.description.substring(0,200)}}></p>
+                                <h4>{playing.title}</h4>
+                                <p dangerouslySetInnerHTML={{ __html: playing.description.trim()}}></p>
                             </div>
                         </div>
                         <div className="audio-control">
-                            <AudioPlayer className="audio-player"
-                                autoPlay={false}
-                                src={playing.audio}
-                                muted={true}
-                                showSkipControls={true} showJumpControls={true}
-                                onClickPrevious={event => this.skipEpisode(event,false)}
-                                onClickNext={event => this.skipEpisode(event,true)}
-                                customIcons={{
-                                    play: <img src={playbutton} alt="play button"/>,
-                                    pause: <img src={pausebutton} alt="pause button"/>
-                                }}
-                                customAdditionalControls={[]}
-                            />
+                            {  iphone ? 
+                                <AudioPlayer className="i-player"
+                                    autoPlay={false}
+                                    src={playing.audio}
+                                    muted={true}
+                                    showSkipControls={true} showJumpControls={true}
+                                    onClickPrevious={event => this.skipEpisode(event,false)}
+                                    onClickNext={event => this.skipEpisode(event,true)}
+                                    customIcons={{
+                                        play: <img src={playbutton} alt="play button"/>,
+                                        pause: <img src={pausebutton} alt="pause button"/>
+                                    }}
+                                    customVolumeControls={[]}
+                                    customAdditionalControls={[]}
+                                /> :
+                                <AudioPlayer className="audio-player"
+                                    autoPlay={false}
+                                    src={playing.audio}
+                                    muted={true}
+                                    showSkipControls={true} showJumpControls={true}
+                                    onClickPrevious={event => this.skipEpisode(event,false)}
+                                    onClickNext={event => this.skipEpisode(event,true)}
+                                    customIcons={{
+                                        play: <img src={playbutton} alt="play button"/>,
+                                        pause: <img src={pausebutton} alt="pause button"/>
+                                    }}
+                                    customAdditionalControls={[]}
+                                />
+                            }
                         </div>
                     </div>
                     <div className="nextEpisode"><h3>Next Episodes</h3></div>
                     <div className="nextEpisode-list">
-                        {podcast.episodes.map(episode => 
+                        {podcast.episodes.filter(e => e.id !== playing.id).map(episode => 
                             <div key={episode.id} className="nextEpisode-list-item">
                                 <div className="nextEpisode-list-item-left"> 
-                                    <h5>{episode.title.substring(0,25)}...</h5>
-                                    <p dangerouslySetInnerHTML={{ __html: episode.description.substring(0,75)}}></p>
+                                    <h5>{episode.title}</h5>
+                                    <p dangerouslySetInnerHTML={{ __html: episode.description}}></p>
                                 </div>
                                 <div className="nextEpisode-list-item-right">
                                     <button id="play" onClick={(event)=>this.playNextEpisode(event,{...episode})}>

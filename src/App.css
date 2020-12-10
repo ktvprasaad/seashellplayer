@@ -30,6 +30,8 @@ h2,h3,h4,h5 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 h3 {
@@ -174,12 +176,15 @@ p {
   margin: 0;
   font-size: 14px;
   letter-spacing: .4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 p.podcast-desc {
   margin-top: .1em;
   height: 2.5em;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nopodcast {
@@ -210,25 +215,19 @@ span {
 .episode-desc{
   display: flex;
   flex-direction: column;  
-  margin-top: 10px;
-  max-height: 150px;
+  margin-top: .7em;
+  max-height: 10em;
   overflow: hidden;
 } 
 
 .episode-desc p {
-  margin-top: 2px;
-  height: 5em;
-  overflow: hidden;
+  margin-top: .2em;
+  max-height: 6.2em;
+  overflow-y: hidden;
 }
 
 .audio-control{
   width: 100%;
-}
-
-.audio-player {
-  background-color: #6BE0CB;
-  border: none;
-  padding: 0;
 }
 
 /* All rhap_* for AudioPlayer component's overrides */
@@ -282,44 +281,41 @@ span {
   display: none;
 }
 
-.rhap_controls-section .rhap_additional-controls {
-  flex: 0;
-}
 
 .i-player .rhap_controls-section .rhap_main-controls {
-  flex: 3;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.audio-player .rhap_controls-section .rhap_main-controls {
-  flex: 3;
-  flex-direction: row;
+.audio-player, .i-player {
+  background-color: #6BE0CB;
+  border: none;
+  padding: 0;
+}
+
+.audio-player .rhap_controls-section {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+}
+
+.i-player .rhap_controls-section {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .rhap_main-controls-button {
   color: #f5f5f5;
 }
 
-.rhap_repeat-button {
-  display: none;
-}
-
 .rhap_play-pause-button {
   margin: 0 .5em;
 }
 
-.rhap_play-pause-button svg{
-  position: relative;
-  color: #4045F5;
-  background-color: #ffffff;
-  border-radius: 50%;
-  width: 100%;
-} 
-
 .rhap_volume-container {
   margin-right: 7px;
+  justify-content: space-between;
 }
 
 .rhap_volume-button {
@@ -355,7 +351,7 @@ span {
 
 .nextEpisode-list-item {
   background-color: #CDF4ED;
-  padding: 12px;
+  padding: .7em;
   margin: 7px 2px;
   display: flex;
   border-radius: 10px;
@@ -365,6 +361,22 @@ span {
 .nextEpisode-list-item-left {
   flex: 80%;
 }
+
+.nextEpisode-list-item-left p {
+  height: 2.5em;
+  overflow-y: hidden;
+}
+
+p * {
+  display: none;
+}
+
+p p {
+  display: unset;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .nextEpisode-list-item-right {
   display: grid;
@@ -386,6 +398,11 @@ button#play {
  cursor: pointer;
 }
 
+@media all and (max-width: 420px) {
+  .rhap_volume-container {
+    flex: 1;
+  }
+}
 
 @media all and (min-width: 480px) {
 

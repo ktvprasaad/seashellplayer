@@ -84,8 +84,8 @@ export class Results extends React.Component {
                             <img src={result.podcast.image} className="podcast-img" alt="podcast"/>
                           </div>
                           <div className="podcast-right">
-                            <h5 className="podcast-header">{result.title_original.substring(0,25)}...</h5>
-                            <p className="podcast-desc">{result.description_original.substring(0,50)}...</p>
+                            <h5 className="podcast-header">{result.title_original}</h5>
+                            <p className="podcast-desc">{result.description_original}</p>
                             <p className="podcast-minutes">
                                 {typeof result.audio_length_sec === 'number' ? 
                                     (result.audio_length_sec/60).toFixed(2) : result.audio_length_sec } MINUTES
