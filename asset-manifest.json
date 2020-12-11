@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/seashellplayer/static/css/main.f1716216.chunk.css",
-    "main.js": "/seashellplayer/static/js/main.10fe7ce2.chunk.js",
-    "main.js.map": "/seashellplayer/static/js/main.10fe7ce2.chunk.js.map",
+    "main.css": "/seashellplayer/static/css/main.34aa2c3d.chunk.css",
+    "main.js": "/seashellplayer/static/js/main.87a9e7d5.chunk.js",
+    "main.js.map": "/seashellplayer/static/js/main.87a9e7d5.chunk.js.map",
     "runtime-main.js": "/seashellplayer/static/js/runtime-main.2c5b656a.js",
     "runtime-main.js.map": "/seashellplayer/static/js/runtime-main.2c5b656a.js.map",
     "static/css/2.3e35cbb6.chunk.css": "/seashellplayer/static/css/2.3e35cbb6.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.cd22f753.chunk.js.map": "/seashellplayer/static/js/2.cd22f753.chunk.js.map",
     "index.html": "/seashellplayer/index.html",
     "static/css/2.3e35cbb6.chunk.css.map": "/seashellplayer/static/css/2.3e35cbb6.chunk.css.map",
-    "static/css/main.f1716216.chunk.css.map": "/seashellplayer/static/css/main.f1716216.chunk.css.map",
+    "static/css/main.34aa2c3d.chunk.css.map": "/seashellplayer/static/css/main.34aa2c3d.chunk.css.map",
     "static/js/2.cd22f753.chunk.js.LICENSE.txt": "/seashellplayer/static/js/2.cd22f753.chunk.js.LICENSE.txt",
     "static/media/backarrow.b06df29b.svg": "/seashellplayer/static/media/backarrow.b06df29b.svg",
     "static/media/forwardarrow.c9ac1875.svg": "/seashellplayer/static/media/forwardarrow.c9ac1875.svg",
@@ -18,8 +18,8 @@
     "static/media/heartoutlineicon.531d0ed8.svg": "/seashellplayer/static/media/heartoutlineicon.531d0ed8.svg",
     "static/media/loadingicon.4ee392fc.svg": "/seashellplayer/static/media/loadingicon.4ee392fc.svg",
     "static/media/logo.0079cc03.svg": "/seashellplayer/static/media/logo.0079cc03.svg",
-    "static/media/pausebutton.54351a8f.svg": "/seashellplayer/static/media/pausebutton.54351a8f.svg",
-    "static/media/playbutton.4c207104.svg": "/seashellplayer/static/media/playbutton.4c207104.svg",
+    "static/media/pausebutton.fcc36dc3.svg": "/seashellplayer/static/media/pausebutton.fcc36dc3.svg",
+    "static/media/playbutton.0404b465.svg": "/seashellplayer/static/media/playbutton.0404b465.svg",
     "static/media/searchicon.0da34784.svg": "/seashellplayer/static/media/searchicon.0da34784.svg",
     "static/media/seashellicon.21f20d11.svg": "/seashellplayer/static/media/seashellicon.21f20d11.svg"
   },
@@ -27,7 +27,7 @@
     "static/js/runtime-main.2c5b656a.js",
     "static/css/2.3e35cbb6.chunk.css",
     "static/js/2.cd22f753.chunk.js",
-    "static/css/main.f1716216.chunk.css",
-    "static/js/main.10fe7ce2.chunk.js"
+    "static/css/main.34aa2c3d.chunk.css",
+    "static/js/main.87a9e7d5.chunk.js"
   ]
 }
