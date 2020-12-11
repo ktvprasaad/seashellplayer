@@ -7,6 +7,39 @@ body {
   margin: .5em;
 }
 
+.App {
+  justify-content: center;
+  margin: auto 0;
+}
+
+p * {
+  display: none;
+}
+
+p p {
+  display: unset;
+}
+
+p {
+  font-size: 12px;
+  letter-spacing: .33px;
+  margin: 0;
+  margin-top: .1em;
+  height: 2.5em;
+  overflow: hidden;
+  white-space: break-spaces;
+  text-overflow: ellipsis;
+}
+
+.episode-desc p, p.podcast-desc {
+  font-size: 14px;
+  letter-spacing: .4px;
+}
+
+.episode-desc p {
+  height: 6.5em;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -29,8 +62,10 @@ h1 {
 h2,h3,h4,h5 {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
+  height: 1.2em;
   margin: 0;
   overflow: hidden;
+  white-space: break-spaces;
   text-overflow: ellipsis;
 }
 
@@ -61,6 +96,10 @@ a {
 
 .shellicon, .hearticon {
   padding: .5em 0em;
+}
+
+.hearticon:hover {
+  cursor: pointer;
 }
 
 .search {
@@ -144,10 +183,16 @@ input:focus {
   margin: 0;
 }
 
+.podcast-results {
+  width: inherit;
+}
+
 /* For player.js component's styling */
 .podcast-list {
   display: grid;
-  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+  grid-template-columns: 1fr;
 }
 
 .podcast {
@@ -165,27 +210,6 @@ input:focus {
   border-radius: 7px;
 }
 
-.podcast-header {
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: .4px;
-  margin: 0;
-}
-
-p {
-  margin: 0;
-  font-size: 14px;
-  letter-spacing: .4px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-p.podcast-desc {
-  margin-top: .1em;
-  height: 2.5em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 .nopodcast {
   color: #6BE0CB;
@@ -219,12 +243,6 @@ span {
   max-height: 10em;
   overflow: hidden;
 } 
-
-.episode-desc p {
-  margin-top: .2em;
-  max-height: 6.2em;
-  overflow-y: hidden;
-}
 
 .audio-control{
   width: 100%;
@@ -310,7 +328,9 @@ span {
 }
 
 .rhap_play-pause-button {
+  display: grid;
   margin: 0 .5em;
+  place-content: center;
 }
 
 .rhap_volume-container {
@@ -347,6 +367,7 @@ span {
 .nextEpisode-list {
   display: grid;
   margin: 10px 0px;
+  grid-template-columns: 1fr;
 }
 
 .nextEpisode-list-item {
@@ -355,26 +376,11 @@ span {
   margin: 7px 2px;
   display: flex;
   border-radius: 10px;
-  border-left: 10px solid #6BE0CB;
+  border-left: .6em solid #6BE0CB;
 }
 
 .nextEpisode-list-item-left {
   flex: 80%;
-}
-
-.nextEpisode-list-item-left p {
-  height: 2.5em;
-  overflow-y: hidden;
-}
-
-p * {
-  display: none;
-}
-
-p p {
-  display: unset;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 
@@ -420,4 +426,4 @@ button#play {
     margin: 0px 6em;
   }
 
-}
+} 
