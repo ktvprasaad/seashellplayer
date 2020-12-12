@@ -18,7 +18,7 @@ export class Player extends React.Component {
             playing: null,
             currentIndex: 0,
             len: -1,
-            iphone: (/iphone|ipod/i.test(navigator.userAgent.toLowerCase())) ? true : false,
+            iphone: (/iphone|ipod|ipad/i.test(navigator.userAgent.toLowerCase())) ? true : false,
         };
     }
 
@@ -67,8 +67,23 @@ export class Player extends React.Component {
         })
     }
 
+    reformat = (description) => {
+
+        const { width } = this.props.windowWidth;
+
+        if ( width <= 320 ) {
+            return description.substring(0,40).concat('...');
+        } else if ( width > 321 && width <= 480 ) {
+            return description.substring(0,80).concat('...');
+        } else if ( width > 480 && width <= 768 ) {
+            return description.substring(0,150).concat('...');
+        }
+        return description;
+    }
+
     render() {
         const { podcast, playing, iphone } = this.state;
+        const { windowWidth } = this.props;
 
         if (!podcast) { return null }
 
@@ -86,7 +101,7 @@ export class Player extends React.Component {
                             </div>
                             <div className="episode-desc">
                                 <h4>{playing.title}</h4>
-                                <p dangerouslySetInnerHTML={{ __html: playing.description.trim()}}></p>
+                                <p dangerouslySetInnerHTML={{ __html: this.reformat(playing.description)}}></p>
                             </div>
                         </div>
                         <div className="audio-control">
@@ -126,8 +141,22 @@ export class Player extends React.Component {
                         {podcast.episodes.filter(e => e.id !== playing.id).map(episode => 
                             <div key={episode.id} className="nextEpisode-list-item">
                                 <div className="nextEpisode-list-item-left"> 
-                                    <h5>{episode.title}</h5>
-                                    <p dangerouslySetInnerHTML={{ __html: episode.description}}></p>
+                                    { windowWidth <= 320 && 
+                                        <h5>
+                                            {episode.title.length > 19 ? episode.title.substring(0,20).concat('...')
+                                            : episode.title}
+                                        </h5>
+
+                                    }
+                                    { windowWidth > 321 &&  windowWidth <= 480 &&
+                                        <h5>
+                                            {episode.title.length > 29 ? episode.title.substring(0,30).concat('...')
+                                            : episode.title}
+                                        </h5>
+
+                                    }
+                                    { windowWidth > 480 && <h5>{episode.title}</h5> }
+                                    <p dangerouslySetInnerHTML={{ __html: this.reformat(episode.description)}}></p>
                                 </div>
                                 <div className="nextEpisode-list-item-right">
                                     <button id="play" onClick={(event)=>this.playNextEpisode(event,{...episode})}>

@@ -48,7 +48,7 @@ export class Results extends React.Component {
     };
 
     render() {
-        const { keyword } = this.props;
+        const { keyword, windowWidth } = this.props;
         const { podcasts, loading } = this.state;
 
         if (!keyword) return null;
@@ -84,8 +84,48 @@ export class Results extends React.Component {
                             <img src={result.podcast.image} className="podcast-img" alt="podcast"/>
                           </div>
                           <div className="podcast-right">
-                            <h5 className="podcast-header">{result.title_original}</h5>
-                            <p className="podcast-desc">{result.description_original}</p>
+                            { windowWidth <= 320 && 
+                              <>
+                                <h5>
+                                  {result.title_original.length > 19 ? result.title_original.substring(0,20).concat('...')
+                                  : result.title_original}
+                                </h5>
+                                <p className="podcast-desc">
+                                  {result.description_original > 39 ? result.description_original.substring(0,40).concat('...')
+                                    : result.description_original}
+                                </p>
+                              </>
+                            }
+                            { windowWidth > 320 &&  windowWidth <= 480 &&
+                              <>
+                                <h5>
+                                  {result.title_original.length > 29 ? result.title_original.substring(0,30).concat('...')
+                                  : result.title_original}
+                                </h5>
+                                <p className="podcast-desc">
+                                  {result.description_original > 79 ? result.description_original.substring(0,80).concat('...')
+                                    : result.description_original}
+                                </p>
+                              </>
+                            }
+                            { windowWidth > 480 &&  windowWidth <= 768 &&
+                              <>
+                                <h5>
+                                  {result.title_original.length > 49 ? result.title_original.substring(0,50).concat('...')
+                                  : result.title_original}
+                                </h5>
+                                <p className="podcast-desc">
+                                  {result.description_original > 149 ? result.description_original.substring(0,150).concat('...')
+                                    : result.description_original}
+                                </p>
+                              </>
+                            }
+                            { windowWidth > 768 && 
+                              <>
+                                <h5 className="podcast-header">{result.title_original}</h5>
+                                <p className="podcast-desc">{result.description_original}</p>
+                              </>
+                            }
                             <p className="podcast-minutes">
                                 {typeof result.audio_length_sec === 'number' ? 
                                     (result.audio_length_sec/60).toFixed(2) : result.audio_length_sec } MINUTES

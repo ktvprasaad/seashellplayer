@@ -23,6 +23,7 @@ export class App extends React.Component {
       searchKeyword: null,
       podcasts: [],
       podcastId: null,
+      windowWidth: window.innerWidth,
     }
   }
 
@@ -51,9 +52,21 @@ export class App extends React.Component {
     })
   }
 
+  handleResize = (e) => {
+    this.setState({ windowWidth: window.innerWidth });
+   };
+
+  componentDidMount(){
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener("resize", this.handleResize);
+  } 
+
   render () {
 
-    const { searchKeyword, podcastId } = this.state;
+    const { searchKeyword, podcastId, windowWidth } = this.state;
 
     return (
       <div className="App">
@@ -85,13 +98,13 @@ export class App extends React.Component {
               return (
                 <div className="results-screen">
                   <Results keyword={searchKeyword} reset={this.reset} 
-                    handlePodcast={this.handlePodcast}/>
+                    handlePodcast={this.handlePodcast} windowWidth={windowWidth}/>
                 </div>
               );
             } else {
               return (
                 <div className="search-player">
-                  <Player podcastId={podcastId}/>
+                  <Player podcastId={podcastId} windowWidth={windowWidth}/>
                 </div>
               );
             }
