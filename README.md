@@ -1,4 +1,4 @@
-# ![Sea Shell Player Logo](https://github.com/ktvprasaad/seashellplayer/blob/master/public/seashellicon.svg) Sea Shell Player: A Podcast Player React App
+# ![Sea Shell Player Logo](https://github.com/ktvprasaad/seashellplayer/blob/master/public/seashellicon.svg) Sea Shell Player: A React App
 
 A simple podcast player that lets users at all ages to listen to variety of podcasts on their choice. This app was built on [create-react-app](https://create-react-app.dev/), [react-h5-audio-player](https://github.com/lhz516/react-h5-audio-player), and the [ListenNotes API](https://www.listennotes.com/api/).
 
@@ -35,7 +35,7 @@ Followed the proceedures provided in the [link](https://create-react-app.dev/doc
 
 ## How To Use The App?
 
-![High Fidelity Wireframe](https://github.com/ktvprasaad/seashellplayer/tree/master/src/svg/HFWireframes.png)
+![High Fidelity Wireframe](https://github.com/ktvprasaad/seashellplayer/blob/master/public/HFWireframes.png)
 * Key-in the podcast in the search input text box you like to listen and hit enter/click forward arrow. 
 * It results maximum 10 podcasts and each one is clickable.
 * Any clicked podcast shows 10 episodes having the first episode playable along with the below listed options.
