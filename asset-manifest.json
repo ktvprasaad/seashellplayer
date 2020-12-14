@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/seashellplayer/static/css/main.0cebf551.chunk.css",
-    "main.js": "/seashellplayer/static/js/main.ee0f80fc.chunk.js",
-    "main.js.map": "/seashellplayer/static/js/main.ee0f80fc.chunk.js.map",
+    "main.css": "/seashellplayer/static/css/main.d4e9ba7f.chunk.css",
+    "main.js": "/seashellplayer/static/js/main.421156c3.chunk.js",
+    "main.js.map": "/seashellplayer/static/js/main.421156c3.chunk.js.map",
     "runtime-main.js": "/seashellplayer/static/js/runtime-main.2c5b656a.js",
     "runtime-main.js.map": "/seashellplayer/static/js/runtime-main.2c5b656a.js.map",
     "static/css/2.3e35cbb6.chunk.css": "/seashellplayer/static/css/2.3e35cbb6.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.7c96ddc8.chunk.js.map": "/seashellplayer/static/js/2.7c96ddc8.chunk.js.map",
     "index.html": "/seashellplayer/index.html",
     "static/css/2.3e35cbb6.chunk.css.map": "/seashellplayer/static/css/2.3e35cbb6.chunk.css.map",
-    "static/css/main.0cebf551.chunk.css.map": "/seashellplayer/static/css/main.0cebf551.chunk.css.map",
+    "static/css/main.d4e9ba7f.chunk.css.map": "/seashellplayer/static/css/main.d4e9ba7f.chunk.css.map",
     "static/js/2.7c96ddc8.chunk.js.LICENSE.txt": "/seashellplayer/static/js/2.7c96ddc8.chunk.js.LICENSE.txt",
     "static/media/backarrow.b06df29b.svg": "/seashellplayer/static/media/backarrow.b06df29b.svg",
     "static/media/forwardarrow.c9ac1875.svg": "/seashellplayer/static/media/forwardarrow.c9ac1875.svg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.2c5b656a.js",
     "static/css/2.3e35cbb6.chunk.css",
     "static/js/2.7c96ddc8.chunk.js",
-    "static/css/main.0cebf551.chunk.css",
-    "static/js/main.ee0f80fc.chunk.js"
+    "static/css/main.d4e9ba7f.chunk.css",
+    "static/js/main.421156c3.chunk.js"
   ]
 }
