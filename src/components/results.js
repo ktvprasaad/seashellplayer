@@ -17,7 +17,7 @@ export class Results extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`https://listen-api.listennotes.com/api/v2/search?q=${this.props.keyword}&type=episode&language=English&safe_mode=0&only_in=title,description,author,audio`, {
+        axios.get(`https://listen-api.listennotes.com/api/v2/search?sort_by_date=0&type=podcast&language=English&safe_mode=1&q=${this.props.keyword}&only_in=title,description,author,audio`, {
             headers: {'X-ListenAPI-Key': process.env.REACT_APP_ListenNotesAPI_Key}
         })
       .then(response => {
@@ -79,9 +79,9 @@ export class Results extends React.Component {
                   <div key={index} className="podcast-list"> 
                     {podcast.results.map((result,index) =>
                         <div className="podcast" key={index} 
-                            onClick={(event)=>this.handlePodcast(event,result.podcast.id)}>
+                            onClick={(event)=>this.handlePodcast(event,result.id)}>
                           <div className="podcast-left">
-                            <img src={result.podcast.image} className="podcast-img" alt="podcast"/>
+                            <img src={result.image} className="podcast-img" alt="podcast"/>
                           </div>
                           <div className="podcast-right">
                             { windowWidth <= 320 && 
@@ -127,8 +127,7 @@ export class Results extends React.Component {
                               </>
                             }
                             <p className="podcast-minutes">
-                                {typeof result.audio_length_sec === 'number' ? 
-                                    (result.audio_length_sec/60).toFixed(2) : result.audio_length_sec } MINUTES
+                                { result.total_episodes } EPISODES
                             </p>
                           </div>
                         </div>

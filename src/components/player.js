@@ -18,7 +18,7 @@ export class Player extends React.Component {
             playing: null,
             currentIndex: 0,
             len: -1,
-            iphone: (/iphone|ipod|ipad/i.test(navigator.userAgent.toLowerCase())) ? true : false,
+            iphone: (/iphone|ipod|ipad|mac/i.test(navigator.userAgent.toLowerCase())) ? true : false,
         };
     }
 
@@ -136,7 +136,9 @@ export class Player extends React.Component {
                             }
                         </div>
                     </div>
-                    <div className="nextEpisode"><h3>Next Episodes</h3></div>
+                    { podcast.episodes.length > 1 && 
+                        <div className="nextEpisode"><h3>Next Episodes</h3></div>
+                    }
                     <div className="nextEpisode-list">
                         {podcast.episodes.filter(e => e.id !== playing.id).map(episode => 
                             <div key={episode.id} className="nextEpisode-list-item">
