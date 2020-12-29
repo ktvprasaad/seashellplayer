@@ -404,6 +404,10 @@ span {
   /* padding-top: 3px; */
 }
 
+.episodeSelect-prev:hover {
+  cursor: pointer;
+}
+
 .nextEpisode {
   margin: 30px 0px 10px;
 }
