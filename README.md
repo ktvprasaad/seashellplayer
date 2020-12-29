@@ -48,8 +48,8 @@ Step 1: Add ```homepage``` to ```package.json```
 ```
 "homepage": "https://<your user name>.github.io/<project name>",
 ```
+
 Step 2: Add ```gh-pages``` and add ```deploy``` to ```scripts``` in ```package.json```
-```
 Now, whenever you run ```npm run build```, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
 
 To publish it at [GitHub](https://github.com/ktvprasaad/seashellplayer), run:
