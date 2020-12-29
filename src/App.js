@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 /* logos and icons */
 import logo from './svg/logo.svg';
@@ -8,8 +8,9 @@ import hearticon from './svg/hearticon.svg';
 
 /* components */
 import Search from './components/search';
-import Player from './components/player';
-import Results from './components/results'; 
+import Player from './components/player/player';
+import Results from './components/results/results'; 
+import Favorites from './components/favorites';
 
 /* Style Sheet */
 import './App.css';
@@ -24,6 +25,7 @@ export class App extends React.Component {
       podcasts: [],
       podcastId: null,
       windowWidth: window.innerWidth,
+      favorites: [],
     }
   }
 
@@ -37,11 +39,25 @@ export class App extends React.Component {
   
   /* To get user chosen podcast from results.js and pass it over to player.js to 
     list their corresponding episodes*/
-  handlePodcast = (id) => {
+  handlePodcast = (id,offset) => {
     this.setState({
-      searchKeyword: null,
       podcastId: id,
     })
+  }
+
+  addToFavorites = (podcast) => {
+
+    let exists = this.state.favorites.some(favorite => favorite.id === podcast.id);
+
+    if (!exists) {
+      this.setState(prevState=>({
+        favorites: [...prevState.favorites,podcast]
+      }))
+    } else {
+      this.setState({
+        favorites: this.state.favorites.filter((favorite) => favorite.id !== podcast.id)
+      })
+    }
   }
 
   /* To rest all the state values upon 'seashell player' click */
@@ -60,9 +76,9 @@ export class App extends React.Component {
     window.addEventListener("resize", this.handleResize);
   }
 
-  componentWillUnmount() {
-    window.addEventListener("resize", this.handleResize);
-  } 
+  // componentWillUnmount() {
+  //   window.addEventListener("resize", this.handleResize);
+  // } 
 
   render () {
 
@@ -81,34 +97,48 @@ export class App extends React.Component {
                   <img src={logo} alt="app logo"/>
                 </Link>
               </div>
-              <div className="hearticon">
-                <img src={hearticon} alt="heart logo"/>
-              </div>
+              <Link to='/fav'>
+                <div className="hearticon">
+                  <img src={hearticon} alt="heart logo"/>
+                </div>
+              </Link>
             </div> 
           </header>
 
+          <Switch>
           <Route exact path="/" render={() => { 
-            if (!searchKeyword && !podcastId) {
+            if (!searchKeyword) {
               return (
                 <div className="search-screen">
                   <Search getKeyword={this.getKeyword}/>
                 </div>
               );
-            } else if (!podcastId) {
+            } else {
               return (
                 <div className="results-screen">
                   <Results keyword={searchKeyword} reset={this.reset} 
                     handlePodcast={this.handlePodcast} windowWidth={windowWidth}/>
                 </div>
               );
-            } else {
+            }
+          }}/>
+
+          <Route path="/player" render={() => { 
+            return (
+              <div className="search-player">
+                <Player podcastId={podcastId} windowWidth={windowWidth} addToFavorites={this.addToFavorites}/>
+              </div>
+            );
+          }}/>
+
+          <Route path="/fav" render={() => { 
               return (
-                <div className="search-player">
-                  <Player podcastId={podcastId} windowWidth={windowWidth}/>
+                <div className="favorites-screen">
+                  <Favorites favorites={this.state.favorites} handlePodcast={this.handlePodcast}/>
                 </div>
               );
-            }
-          }}/> 
+          }}/>
+          </Switch>
 
         </Router>   
       </div>

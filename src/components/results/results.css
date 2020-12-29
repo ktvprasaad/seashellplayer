@@ -1,0 +1,36 @@
+* {
+    color: #000;
+}
+
+ul li a, ul li a:hover, ul li a:focus {
+    color: #000;
+    border: none;
+}
+
+.react-pagination-js-border-bottom ul {
+    font-size: 25px;
+    margin-top: -7px;
+    margin-left: auto;
+}
+
+.react-pagination-js-border-bottom .is-active {
+    border: none;
+    color: #4045f5;
+}
+
+.results-control .page {
+    margin-left: auto;
+} 
+
+.page:hover {
+    border: none;
+}
+
+@media all and (min-width: 768px) {
+    .react-pagination-js-border-bottom ul {
+        display: flex;
+        margin: 1em 0;
+        justify-content: center;
+    }
+}
+
