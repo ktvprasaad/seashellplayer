@@ -1,12 +1,12 @@
 # ![Sea Shell Player Logo](https://github.com/ktvprasaad/seashellplayer/blob/master/public/seashellicon.svg) Sea Shell Player: A React App
 
-A simple podcast player that lets users at all ages to listen to variety of podcasts on their choice. This app was built on [create-react-app](https://create-react-app.dev/), [react-h5-audio-player](https://github.com/lhz516/react-h5-audio-player), and the [ListenNotes API](https://www.listennotes.com/api/).
+A simple podcast player that lets users at all ages to listen to variety of podcasts on their choice. This app was built on [create-react-app](https://create-react-app.dev/), [react-h5-audio-player](https://github.com/lhz516/react-h5-audio-player), [react-pagination-js](https://github.com/isaurssaurav/react-pagination-js), and the [ListenNotes API](https://www.listennotes.com/api/).
 
 ![SPA-React](https://github.com/ktvprasaad/seashellplayer/blob/master/public/player.png)
 
 ## Installation
 
-1 Clone this repository
+1. Clone this repository
 ```
 $ git clone https://github.com/ktvprasaad/seashellplayer.git
 $ cd seashellplayer
