@@ -401,7 +401,13 @@ span {
 .episodeSelect img {
   height: 1.2em;
   margin-left: 12px;
-  /* padding-top: 3px; */
+  border: none;
+  outline: none;
+}
+
+.episodeSelect img:hover {
+  border: none;
+  outline: none;
 }
 
 .episodeSelect-prev:hover {

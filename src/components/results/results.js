@@ -85,10 +85,6 @@ export class Results extends React.Component {
     handleResize = (e) => {
       this.setState({ windowWidth: window.innerWidth });
     };
-  
-    // componentWillUnmount() {
-    //   window.addEventListener("resize", this.handleResize);
-    // } 
 
     render() {
         const { keyword } = this.props;
@@ -119,7 +115,7 @@ export class Results extends React.Component {
                   <div className="page">
                     <Pagination
                       currentPage={currentPage}
-                      totalSize={totalPodcasts >= 1000 ? 100 : totalPodcasts}
+                      totalSize={totalPodcasts >= 100 ? 100 : totalPodcasts}
                       sizePerPage={10}
                       changeCurrentPage={this.changeCurrentPage}
                       theme="border-bottom"
@@ -203,7 +199,7 @@ export class Results extends React.Component {
               <div className="page-bottom">
                 <Pagination
                   currentPage={currentPage}
-                  totalSize={totalPodcasts >= 1000 ? 100 : totalPodcasts}
+                  totalSize={totalPodcasts >= 100 ? 100 : totalPodcasts}
                   sizePerPage={10}
                   changeCurrentPage={this.changeCurrentPage}
                   theme="border-bottom"

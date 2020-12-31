@@ -148,7 +148,7 @@ export class Player extends React.Component {
                 description: playing.description, total_episodes: playing.total_episodes});
             localStorage.setItem("myFavorite", JSON.stringify(myFavorite));
         } else {
-            myFavorite.pop({id: playing.id});
+            myFavorite.splice(myFavorite.findIndex(fav => fav.id === playing.id), 1);
             localStorage.setItem("myFavorite", JSON.stringify(myFavorite));
         }
     }
