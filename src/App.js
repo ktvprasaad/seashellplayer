@@ -76,10 +76,6 @@ export class App extends React.Component {
     window.addEventListener("resize", this.handleResize);
   }
 
-  // componentWillUnmount() {
-  //   window.addEventListener("resize", this.handleResize);
-  // } 
-
   render () {
 
     const { searchKeyword, podcastId, windowWidth } = this.state;

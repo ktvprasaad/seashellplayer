@@ -141,8 +141,8 @@ export class Results extends React.Component {
                                   : result.title_original}
                                 </h5>
                                 <p className="podcast-desc">
-                                  {result.description_original > 39 ? result.description_original.substring(0,40).concat('...')
-                                    : result.description_original}
+                                  {result.description_original.trim() > 39 ? result.description_original.trim().substring(0,40).concat('...')
+                                    : result.description_original.trim()}
                                 </p>
                               </>
                             }
@@ -153,8 +153,8 @@ export class Results extends React.Component {
                                   : result.title_original}
                                 </h5>
                                 <p className="podcast-desc">
-                                  {result.description_original > 79 ? result.description_original.substring(0,80).concat('...')
-                                    : result.description_original}
+                                  {result.description_original.trim() > 79 ? result.description_original.trim().substring(0,80).concat('...')
+                                    : result.description_original.trim()}
                                 </p>
                               </>
                             }
@@ -165,15 +165,15 @@ export class Results extends React.Component {
                                   : result.title_original}
                                 </h5>
                                 <p className="podcast-desc">
-                                  {result.description_original > 149 ? result.description_original.substring(0,150).concat('...')
-                                    : result.description_original}
+                                  {result.description_original.trim() > 149 ? result.description_original.trim().substring(0,150).concat('...')
+                                    : result.description_original.trim()}
                                 </p>
                               </>
                             }
                             { windowWidth > 768 && 
                               <>
                                 <h5 className="podcast-header">{result.title_original}</h5>
-                                <p className="podcast-desc">{result.description_original}</p>
+                                <p className="podcast-desc">{result.description_original.trim()}</p>
                               </>
                             }
                             <p className="podcast-episodes">

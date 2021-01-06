@@ -158,13 +158,13 @@ export class Player extends React.Component {
         const { width } = this.props.windowWidth;
 
         if ( width <= 320 ) {
-            return description.substring(0,40).concat('...');
+            return description.trim().substring(0,40).concat('...');
         } else if ( width > 321 && width <= 480 ) {
-            return description.substring(0,80).concat('...');
+            return description.trim().substring(0,80).concat('...');
         } else if ( width > 480 && width <= 768 ) {
-            return description.substring(0,150).concat('...');
+            return description.trim().substring(0,150).concat('...');
         }
-        return description;
+        return description.trim();
     }
 
     render() {

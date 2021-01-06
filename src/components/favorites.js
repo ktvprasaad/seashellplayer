@@ -76,7 +76,7 @@ export class Favorites extends React.Component {
                 </div>
                 <div className="podcast-right">
                   <h5 className="podcast-header">{favorite.title}</h5>
-                  <p className="podcast-desc" dangerouslySetInnerHTML={{ __html: favorite.description}}></p>
+                  <p className="podcast-desc" dangerouslySetInnerHTML={{ __html: favorite.description.trim()}}></p>
                   <p className="podcast-episodes">
                     { favorite.total_episodes } EPISODES
                   </p>
